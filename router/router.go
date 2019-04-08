@@ -1,8 +1,9 @@
-package route
+package router
 
 import (
 	"net/http"
-	//"github.com/sycdtk/bobi/controllers"
+
+	"github.com/sycdtk/mofy/controllers"
 )
 
 func init() {
@@ -15,7 +16,7 @@ func init() {
 	// http.Handle("/vendor/", http.StripPrefix("/vendor/", http.FileServer(http.Dir("./static/vendor"))))
 
 	// //注册controllers
-	// http.HandleFunc("/login", controllers.Login)
+	http.HandleFunc("/login", controllers.Login)
 	// http.HandleFunc("/logout", controllers.Logout)
 	// http.HandleFunc("/index", controllers.Index)
 	// http.HandleFunc("/notFound", controllers.NotFound)

@@ -1,1 +1,3 @@
-module github.com/sycdtk/mofy
+module mofy
+
+go 1.12

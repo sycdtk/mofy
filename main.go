@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	_ "github.com/sycdtk/mofy/route" //初始化路由
+	_ "github.com/sycdtk/mofy/router" //初始化路由
 )
 
 func main() {
