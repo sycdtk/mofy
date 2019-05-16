@@ -3,12 +3,13 @@ package router
 import (
 	"net/http"
 
+	"github.com/sycdtk/bobi/web/restful"
 	"github.com/sycdtk/mofy/controllers"
 )
 
 func init() {
 	//注册静态文件服务
-	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./frontend/dist"))))
+	restful.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./xin"))), http.MethodGet)
 	// http.Handle("/image/", http.StripPrefix("/image/", http.FileServer(http.Dir("./static/image"))))
 	// http.Handle("/dist/", http.StripPrefix("/dist/", http.FileServer(http.Dir("./static/dist"))))
 	// http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("./static/css"))))
@@ -16,7 +17,7 @@ func init() {
 	// http.Handle("/vendor/", http.StripPrefix("/vendor/", http.FileServer(http.Dir("./static/vendor"))))
 
 	// //注册controllers
-	http.HandleFunc("/login", controllers.Login)
+	restful.HandleFunc("/login", controllers.Login, http.MethodGet, false)
 	// http.HandleFunc("/logout", controllers.Logout)
 	// http.HandleFunc("/index", controllers.Index)
 	// http.HandleFunc("/notFound", controllers.NotFound)
